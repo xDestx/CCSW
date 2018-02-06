@@ -1,5 +1,6 @@
 package com.xdest.ccsw;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -7,8 +8,12 @@ import java.time.LocalDate;
  * @author xDestx
  *
  */
-public class Person {
+public abstract class Person implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8386301711066738237L;
 	private String firstName, middleName, lastName;
 	private LocalDate birthday;
 	private Sex sex;
@@ -21,7 +26,7 @@ public class Person {
 	 * @param birthday Birthday
 	 * @param sex Sex
 	 */
-	public Person(String firstName, String middleName, String lastName, LocalDate birthday, Sex sex) {
+	Person(String firstName, String middleName, String lastName, LocalDate birthday, Sex sex) {
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
